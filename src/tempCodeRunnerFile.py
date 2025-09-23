@@ -1,0 +1,1 @@
+pip install serpapi tabulate python-dotenv
