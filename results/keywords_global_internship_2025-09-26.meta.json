@@ -1,0 +1,7 @@
+{
+  "seed_keyword": "global internship",
+  "generated_at": "2025-09-26T12:28:13.582933Z",
+  "total_keywords": 21,
+  "data_source": "SerpApi with heuristic search volumes",
+  "methodology": "Opportunity Score = log10(volume+1) / (competition + 0.01)"
+}

@@ -1,0 +1,23 @@
+{
+  "analysis_date": "2025-09-26T19:49:29.358442",
+  "seed_keyword": "nothing",
+  "parameters": {
+    "max_candidates": 120,
+    "top_results": 50,
+    "min_search_volume": 10,
+    "max_competition": 1.0
+  },
+  "summary": {
+    "total_keywords": 16,
+    "average_opportunity_score": 9.7325,
+    "top_keyword": "Nothing India",
+    "intent_distribution": {
+      "informational": 16
+    },
+    "tail_distribution": {
+      "long-tail": 6,
+      "short-tail": 5,
+      "mid-tail": 5
+    }
+  }
+}
