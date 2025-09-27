@@ -44,7 +44,7 @@ sys.path.insert(0, str(current_dir))
 
 # Import ranking functions - handle different import scenarios
 try:
-    from ranking import collect_candidates, score_candidates
+    from src.ranking import collect_candidates, score_candidates
 except ImportError:
     try:
         import ranking
