@@ -23,13 +23,21 @@ This project was built to demonstrate skills in **Python, AI agents, API integra
 ## seo-keyword-ai-agent/
 │── src/
 │ ├── app.py # Master pipeline orchestrator
+
 │ ├── ranking.py # Keyword discovery & scoring
+
 │ ├── postprocess.py # Cleans & enriches results
+
 │ ├── dashboard.py # Streamlit visualization
+
 │ ├── server.py # FastAPI/Render server
+
 │── output/ # Generated keyword results
+
 │── .env # API keys (not committed)
+
 │── requirements.txt # Python dependencies
+
 │── README.md # Project documentation
 
 
