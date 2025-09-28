@@ -81,92 +81,19 @@ This project was built to demonstrate skills in **Python, AI agents, API integra
     ```
 
 ---
-
-## ▶️ Usage
-
-### Run the full pipeline
-```bash
-python src/app.py "global internship" --max-candidates 100 --top-results 50
-
 ▶️ Usage
 Run the full pipeline
+
+Bash
+
 python src/app.py "global internship" --max-candidates 100 --top-results 50
-
 Launch the dashboard
+
+Bash
+
 streamlit run src/dashboard.py
-
 Run as an API (Render/FastAPI)
+
+Bash
+
 gunicorn -k uvicorn.workers.UvicornWorker src.server:app --bind 0.0.0.0:8000 --workers 2
-
-🔗 n8n Integration
-
-Create an n8n workflow with a Webhook node.
-
-Connect it to the Render API:
-
-POST https://seo-keyword-ai-agent.onrender.com/analyze
-{
-  "seed": "global internship",
-  "top": 10
-}
-
-
-Add Email/Slack nodes to auto-send reports.
-
-📊 Example Output
-
-Top 5 Keyword Opportunities:
-
-Keyword	Volume	Competition	Score	Results
-UCLA Global Internship Program	2000	0.0	330.12	0
-Summer Internship Programs - CIEE	1666	0.33	9.26	54,000
-Global Internship Program HENNGE	2000	0.35	9.01	10,200
-Berkeley Global Internships Paid	1666	0.45	6.98	219,000
-Global Internship Remote	2500	0.50	6.66	174M
-🛠️ Tech Stack
-
-Python (Core language)
-
-SerpAPI (Google search results API)
-
-Pandas, Requests, Tabulate (Data processing)
-
-Streamlit + Plotly (Dashboard & charts)
-
-FastAPI + Gunicorn (API server)
-
-Render (Deployment)
-
-n8n (Workflow automation)
-
-📌 Roadmap
-
- Core pipeline (keyword discovery + analysis)
-
- Dashboard for visualization
-
- Deployment on Render
-
- n8n integration for automation
-
- Add real Google Ads search volume API
-
- Multi-language keyword support
-
- AI-powered keyword clustering
-
-👨‍💻 Author
-
-Om Raghuvanshi – Engineering student passionate about AI, Generative AI, and Travel Filmmaking.
-
-🌐 Portfolio: [Your Website/LinkedIn]
-
-🐦 Twitter: [@yourhandle]
-
-📧 Contact: [your email]
-
-⚡ If you like this project, don’t forget to ⭐ star the repo and fork it!
-
-
-
-
