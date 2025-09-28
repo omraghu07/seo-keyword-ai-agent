@@ -22,9 +22,10 @@ This project was built to demonstrate skills in **Python, AI agents, API integra
 
 ## seo-keyword-ai-agent/
 │
-├── app.py # Master pipeline orchestrator.
+├── app.py # Master pipeline orchestrator
+
 │──  dashboard.py # Streamlit visualization
-│
+
 │── src/
 
 │ ├── postprocess.py # Cleans & enriches results
@@ -53,19 +54,19 @@ git clone https://github.com/your-username/seo-keyword-ai-agent.git
 cd seo-keyword-ai-agent
 
 
-Create virtual environment
+2. **Create virtual environment**
 
 python -m venv agent_venv
 source agent_venv/bin/activate   # Mac/Linux
 agent_venv\Scripts\activate      # Windows
 
 
-Install dependencies
+3. **Install dependencies**
 
 pip install -r requirements.txt
 
 
-Setup .env file
+4. **Setup .env file**
 
 SERPAPI_KEY=your_serpapi_key_here
 
