@@ -21,14 +21,15 @@ This project was built to demonstrate skills in **Python, AI agents, API integra
 ## 🏗️ Project Structure  
 
 ## seo-keyword-ai-agent/
+│
+├── app.py # Master pipeline orchestrator.
+│──  dashboard.py # Streamlit visualization
+│
 │── src/
-│ ├── app.py # Master pipeline orchestrator
-
-│ ├── ranking.py # Keyword discovery & scoring
 
 │ ├── postprocess.py # Cleans & enriches results
 
-│ ├── dashboard.py # Streamlit visualization
+│ ├── ranking.py # Keyword discovery & scoring
 
 │ ├── server.py # FastAPI/Render server
 
