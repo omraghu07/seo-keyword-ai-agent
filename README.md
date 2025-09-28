@@ -48,27 +48,45 @@ This project was built to demonstrate skills in **Python, AI agents, API integra
 
 ## ⚙️ Installation  
 
-1. **Clone the repo**  
+---
+
+## ⚙️ Installation
+
+1.  **Clone the repo**
+    ```bash
+    git clone [https://github.com/your-username/seo-keyword-ai-agent.git](https://github.com/your-username/seo-keyword-ai-agent.git)
+    cd seo-keyword-ai-agent
+    ```
+
+2.  **Create a virtual environment**
+    ```bash
+    python -m venv agent_venv
+    
+    # Mac/Linux
+    source agent_venv/bin/activate
+    
+    # Windows
+    agent_venv\Scripts\activate
+    ```
+
+3.  **Install dependencies**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4.  **Setup .env file**
+    Create a `.env` file in the root directory and add your API key:
+    ```
+    SERPAPI_KEY=your_serpapi_key_here
+    ```
+
+---
+
+## ▶️ Usage
+
+### Run the full pipeline
 ```bash
-git clone https://github.com/your-username/seo-keyword-ai-agent.git
-cd seo-keyword-ai-agent
-
-
-2. **Create virtual environment**
-
-python -m venv agent_venv
-source agent_venv/bin/activate   # Mac/Linux
-agent_venv\Scripts\activate      # Windows
-
-
-3. **Install dependencies**
-
-pip install -r requirements.txt
-
-
-4. **Setup .env file**
-
-SERPAPI_KEY=your_serpapi_key_here
+python src/app.py "global internship" --max-candidates 100 --top-results 50
 
 ▶️ Usage
 Run the full pipeline
