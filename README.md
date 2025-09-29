@@ -54,8 +54,9 @@ This project was built to demonstrate skills in **Python, AI agents, API integra
 
 1.  **Clone the repo**
     ```bash
-    git clone [https://github.com/omraghu07/seo-keyword-ai-agent.git](https://github.comomraghu07/seo-keyword-ai-agent.git)
+    git clone https://github.com/omraghu07/seo-keyword-ai-agent.git
     cd seo-keyword-ai-agent
+
     ```
 
 2.  **Create a virtual environment**
@@ -82,7 +83,17 @@ This project was built to demonstrate skills in **Python, AI agents, API integra
 
 ---
 
- 2. Launch the Interactive Dashboard
+## ▶️ Usage
+
+### 1. Run the Full Pipeline
+
+Execute the main script from the command line to generate a keyword report.
+
+```bash
+python src/app.py "global internship" --max-candidates 100 --top-results
+
+### 2. Launch the Interactive Dashboard
+
 Visualize the results using the Streamlit dashboard.
 
 Bash

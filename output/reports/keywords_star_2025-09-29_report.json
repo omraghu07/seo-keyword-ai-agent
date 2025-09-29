@@ -1,0 +1,23 @@
+{
+  "analysis_date": "2025-09-29T19:54:53.564771",
+  "seed_keyword": "star",
+  "parameters": {
+    "max_candidates": 120,
+    "top_results": 15,
+    "min_search_volume": 10,
+    "max_competition": 1.0
+  },
+  "summary": {
+    "total_keywords": 20,
+    "average_opportunity_score": 5.7170000000000005,
+    "top_keyword": "🌟 Star Symbol Text to Copy and Paste ✵ ✰ ✷ ✭ ✧ ✸ ✡ ✮ ❂",
+    "intent_distribution": {
+      "informational": 20
+    },
+    "tail_distribution": {
+      "long-tail": 11,
+      "short-tail": 8,
+      "mid-tail": 1
+    }
+  }
+}
