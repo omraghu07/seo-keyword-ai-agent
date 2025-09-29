@@ -83,80 +83,74 @@ This project was built to demonstrate skills in **Python, AI agents, API integra
 
 ---
 
-## ▶️ Usage
+# ▶️ Usage
 
-### 1. Run the Full Pipeline
 
-Execute the main script from the command line to generate a keyword report.
+
+##      Run the full pipeline
+
 
 ```bash
-python src/app.py "global internship" --max-candidates 100 --top-results
+  python app.py "global internship" --max-candidates 100 --top-results 50
 
-### 2. Launch the Interactive Dashboard
+```
 
-Visualize the results using the Streamlit dashboard.
+## Launch the dashboard
 
-Bash
+```bash
+  streamlit run dashboard.py
 
-streamlit run src/dashboard.py
-3. Run as an API (Render/FastAPI)
-Deploy the application as a web service using Gunicorn.
+``` 
+## Run as an API (Render/FastAPI)
+```bash
+  gunicorn -k uvicorn.workers.UvicornWorker src.server:app --bind 0.0.0.0:8000 --workers 2
 
-Bash
+```
+# 🔗 n8n Integration
 
-gunicorn -k uvicorn.workers.UvicornWorker src.server:app --bind 0.0.0.0:8000 --workers 2
-🔗 n8n Integration
-Automate your keyword analysis by creating an n8n workflow.
+- Create an n8n workflow with a Webhook node.
 
-Start a new workflow with a Webhook node.
+- Connect it to Render API:
 
-Connect the webhook to the deployed Render API endpoint.
-
-Configure the HTTP Request node to send a POST request to https://seo-keyword-ai-agent.onrender.com/analyze with a JSON body:
-
-JSON
-
+```bash
+  POST https://seo-keyword-ai-agent.onrender.com/analyze
 {
   "seed": "global internship",
   "top": 10
 }
-Add Email or Slack nodes to automatically send reports after the workflow completes.
 
-📊 Example Output
-Here is a sample of the top 5 keyword opportunities identified by the agent:
+```
+- Add email/Slack nodes to auto-send reports.
 
-Keyword	Volume	Competition	Score	Results
-UCLA Global Internship Program	2000	0.03	30.12	0
-Summer Internship Programs - CIEE	1666	0.33	9.26	54,000
-Global Internship Program HENNGE	2000	0.35	9.01	110,200
-Berkeley Global Internships Paid	1666	0.45	6.98	219,000
-Global Internship Remote	2500	0.50	6.66	174,000,000
+# 📊 Example Output
 
-Export to Sheets
-📌 Roadmap
-[x] Core pipeline (keyword discovery + analysis)
+## Top 5 Keyword Opportunities:
 
-[x] Dashboard for visualization
 
-[x] Deployment on Render
+| Keyword                           | Volume | Competition | Score  | Results |
+| --------------------------------- | ------ | ----------- | ------ | ------- |
+| UCLA Global Internship Program    | 2000   | 0.0         | 330.12 | 0       |
+| Summer Internship Programs - CIEE | 1666   | 0.33        | 9.26   | 54,000  |
+| Global Internship Program HENNGE  | 2000   | 0.35        | 9.01   | 10,200  |
+| Berkeley Global Internships Paid  | 1666   | 0.45        | 6.98   | 219,000 |
+| Global Internship Remote          | 2500   | 0.50        | 6.66   | 174M    |
 
-[x] n8n integration for automation
+## 🛠️ Tech Stack
 
-[ ] Add real Google Ads search volume API integration
+- Python (Core language)
+- SerpAPI (Google search results API)
+- Pandas, Requests, Tabulate (Data processing)
+- Streamlit + Plotly (Dashboard & charts)
+- FastAPI + Gunicorn (API server)
+- Render (Deployment)
+- n8n (Workflow automation)
 
-[ ] Implement multi-language keyword support
+# 👨‍💻 Author
 
-[ ] Add AI-powered keyword clustering
+Om Raghuwanshi – Engineering student passionate about AI
 
-👨‍💻 Author
-Om Raghuvanshi
+## 🔗 Links
 
-An engineering student passionate about AI, Generative AI, and Travel Filmmaking.
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/om-raghuwanshi-b5136a298)
 
-Portfolio: [Your Website/LinkedIn]
-
-Twitter: [@yourhandle]
-
-Contact: [your email]
-
-⚡ If you find this project useful, don’t forget to ⭐ star the repository and fork it!
+⚡ If you like this project, don’t forget to ⭐ star the repo and fork it!
