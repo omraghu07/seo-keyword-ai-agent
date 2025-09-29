@@ -1,3 +1,4 @@
 venv/
+myproject_env/
 __pycache__/
 .env
