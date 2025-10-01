@@ -268,6 +268,38 @@ def score_candidates_fast(candidates: List[str]) -> List[Dict[str, Any]]:
     scored_results.sort(key=lambda x: x["opportunity_score"], reverse=True)
     return scored_results
 
+def run_pipeline(seed: str, top: int = 10) -> List[Dict[str, Any]]:
+    """
+    Main pipeline function that runs the keyword research process.
+    
+    Args:
+        seed: The seed keyword to research
+        top: Number of top results to return
+        
+    Returns:
+        List of keyword analysis results
+    """
+    logger.info(f"Running pipeline for seed: '{seed}', top: {top}")
+    
+    # Set max_candidates to 2x top to ensure we have enough candidates
+    max_candidates = top * 2
+    
+    # Step 1: Collect keyword candidates
+    candidates = collect_candidates_fast(seed, max_candidates)
+    
+    if not candidates:
+        logger.warning(f"No candidates found for seed: '{seed}'")
+        return []
+    
+    # Step 2: Score the candidates
+    scored_results = score_candidates_fast(candidates)
+    
+    # Step 3: Return top results
+    final_results = scored_results[:top]
+    
+    logger.info(f"Pipeline completed: {len(final_results)} results for '{seed}'")
+    return final_results
+
 def check_rate_limit(client_ip: str) -> bool:
     """Simple rate limiting check."""
     current_time = time.time()
@@ -340,6 +372,28 @@ async def health_check():
         "version": "2.0.0",
         "optimized": True
     }
+
+@app.post("/analyze")
+async def analyze_keywords(request: KeywordRequest):
+    """Analyze keywords using the main pipeline."""
+    start_time = time.time()
+    
+    try:
+        # Run your pipeline with the given seed
+        results = run_pipeline(seed=request.seed, top=request.top)
+        
+        processing_time = time.time() - start_time
+        
+        return {
+            "keywords": results,
+            "seed": request.seed,
+            "returned": len(results),
+            "processing_time_seconds": round(processing_time, 2)
+        }
+        
+    except Exception as e:
+        logger.error(f"Error in analyze_keywords: {e}")
+        raise HTTPException(status_code=500, detail="Keyword analysis failed")
 
 @app.get("/keywords/fast")
 async def get_keywords_fast(
