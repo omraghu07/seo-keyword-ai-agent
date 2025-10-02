@@ -1,0 +1,23 @@
+{
+  "analysis_date": "2025-10-03T00:15:57.118938",
+  "seed_keyword": "avengers",
+  "parameters": {
+    "max_candidates": 120,
+    "top_results": 50,
+    "min_search_volume": 50,
+    "max_competition": 1.0
+  },
+  "summary": {
+    "total_keywords": 19,
+    "average_opportunity_score": 5.546315789473685,
+    "top_keyword": "Avengers",
+    "intent_distribution": {
+      "informational": 19
+    },
+    "tail_distribution": {
+      "long-tail": 11,
+      "short-tail": 4,
+      "mid-tail": 4
+    }
+  }
+}
