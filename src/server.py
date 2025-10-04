@@ -451,8 +451,8 @@ async def stats():
 async def get_keywords(
     request: Request,
     seed: str = Query(..., description="Seed keyword", min_length=1, max_length=100),
-    top: int = Query(10, description="Number of keywords to return", ge=1, le=100),
-    enrich_top: int = Query(0, description="Number of top results to enrich with SerpAPI", ge=0, le=20)
+    top: int = Query(30, description="Number of keywords to return", ge=1, le=100),
+    enrich_top: int = Query(10, description="Number of top results to enrich with SerpAPI", ge=0, le=20)
 ):
     """
     Main keyword research endpoint.
